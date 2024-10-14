@@ -1,7 +1,12 @@
 import { Spinner } from "nanospinner";
+import { input } from '@inquirer/prompts';
 
-const searchUrl = process.env.SEARCH_ENGINE_URL;
+let searchUrl = process.env.SEARCH_ENGINE_URL;
 export const getUrls = async (query: string, spinner: Spinner) => {
+    if(!searchUrl) {
+        const answer = await input({ message: 'Please enter a valid searxng instance:' }); 
+        searchUrl = answer
+    }
     spinner.start({
         text: `Searching with searxng instance at ${searchUrl}`
     })

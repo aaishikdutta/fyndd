@@ -22,6 +22,7 @@
     "cheerio": "^1.0.0",
     "commander": "^12.1.0",
     "figlet": "^1.8.0",
+    "inquirer": "^12.0.0",
     "nanospinner": "^1.1.0",
     "ollama": "^0.5.9"
   }
